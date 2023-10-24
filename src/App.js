@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import PageContent from './components/pageContent/PageContent';
+import 'bootstrap/dist/css/bootstrap.css';
+import ErrorBoundary from './components/errorBoundary/ErrorBoundary';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<>
+			<ErrorBoundary
+				fallbackUI={'Kindly refresh. Something went wrong in the UI'}
+			>
+				<div className='App'>
+					<PageContent />
+				</div>
+			</ErrorBoundary>
+		</>
+	);
 }
 
 export default App;
